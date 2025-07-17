@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tulip Restaurant | Home</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,27 +17,61 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
     rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (max-width: 768px) {
+      #mobile-menu {
+        display: none;
+      }
+      #menu-toggle:checked ~ #mobile-menu {
+        display: block;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-[#2B2B2B] font-[Poppins]">
 
   <!-- Navbar -->
   <nav id="navbar"
-    class="w-full h-20 flex items-center justify-between px-10 md:px-32 bg-[#4B4B4B] shadow-md sticky top-0 z-50 transition-transform duration-300">
+    class="w-full h-20 flex items-center justify-between px-6 md:px-32 bg-[#4B4B4B] shadow-md sticky top-0 z-50 transition-transform duration-300">
     <div class="text-2xl text-[#F6F5F2] tracking-widest font-semibold">
       TULIP
     </div>
-        <ul class="flex items-center ml-6 space-x-6 text-[#F6F5F2]">
-        <li><a href="#hero" class="hover:text-[#EAC47E] cursor-pointer">Home</a></li>
-        <li><a href="#about" class="hover:text-[#EAC47E] cursor-pointer">About</a></li>
-        <li><a href="#menu" class="hover:text-[#EAC47E] cursor-pointer">Menu</a></li>
-        <li><a href="#gallery" class="hover:text-[#EAC47E] cursor-pointer">Gallery</a></li>
-        <li><a href="#contact" class="hover:text-[#EAC47E] cursor-pointer">Contact</a></li>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center ml-6 space-x-6 text-[#F6F5F2]">
+      <li><a href="#hero" class="hover:text-[#EAC47E] cursor-pointer">Home</a></li>
+      <li><a href="#about" class="hover:text-[#EAC47E] cursor-pointer">About</a></li>
+      <li><a href="#menu" class="hover:text-[#EAC47E] cursor-pointer">Menu</a></li>
+      <li><a href="#gallery" class="hover:text-[#EAC47E] cursor-pointer">Gallery</a></li>
+      <li><a href="#contact" class="hover:text-[#EAC47E] cursor-pointer">Contact</a></li>
+    </ul>
+    <!-- Hamburger -->
+    <div class="md:hidden">
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+    </div>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+    <ul id="mobile-menu"
+      class="absolute top-20 left-0 w-full bg-[#4B4B4B] text-[#F6F5F2] space-y-4 py-4 px-6 md:hidden z-40">
+      <li><a href="#hero" class="block hover:text-[#EAC47E]">Home</a></li>
+      <li><a href="#about" class="block hover:text-[#EAC47E]">About</a></li>
+      <li><a href="#gallery" class="block hover:text-[#EAC47E]">Gallery</a></li>
+      <li><a href="#contact" class="block hover:text-[#EAC47E]">Contact</a></li>
     </ul>
   </nav>
 
+
   <!-- Hero Section -->
-  <section id="hero" class="relative bg-cover bg-center h-screen" style="background-image: url('/assets/foodFrame.jpg');">
+  <section id="hero" class="relative bg-cover bg-center h-screen" style="background-image: url('./assets/foodFrame.jpg');">
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="relative z-10 h-full flex items-center">
       <div class="text-white md:pl-16 max-w-xl space-y-6 px-6">
@@ -76,19 +110,19 @@
     <h2 class="text-4xl md:text-5xl font-bold mb-10">Menu Highlights</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <div class="bg-[#3B3B3B] p-4 rounded-lg shadow">
-        <img src="/assets/ButterChicken.jpg" alt="Dish 1" class="rounded mb-4 w-full h-48 object-cover">
+        <img src="./assets/ButterChicken.jpg" alt="Dish 1" class="rounded mb-4 w-full h-48 object-cover">
         <h3 class="text-xl font-semibold">Butter Chicken</h3>
         <p>Creamy tomato curry with tender chicken pieces.</p>
         <span class="block mt-2 font-bold">₹620</span>
       </div>
       <div class="bg-[#3B3B3B] p-4 rounded-lg shadow">
-        <img src="/assets/PannerTikka.jpg" alt="Dish 2" class="rounded mb-4 w-full h-48 object-cover">
+        <img src="./assets/PannerTikka.jpg" alt="Dish 2" class="rounded mb-4 w-full h-48 object-cover">
         <h3 class="text-xl font-semibold">Paneer Tikka</h3>
         <p>Char-grilled cottage cheese marinated in Indian spices.</p>
         <span class="block mt-2 font-bold">₹380</span>
       </div>
       <div class="bg-[#3B3B3B] p-4 rounded-lg shadow">
-        <img src="/assets/TandooriRoti.jpg" alt="Dish 3" class="rounded mb-4 w-full h-48 object-cover">
+        <img src="./assets/TandooriRoti.jpg" alt="Dish 3" class="rounded mb-4 w-full h-48 object-cover">
         <h3 class="text-xl font-semibold">Tandoori Roti</h3>
         <p>Freshly baked whole wheat flatbread from the clay oven.</p>
         <span class="block mt-2 font-bold">₹30</span>
@@ -100,10 +134,10 @@
   <section id="gallery" class="bg-[#3B3B3B] text-[#F6F5F2] py-16 px-6 md:px-32">
     <h2 class="text-4xl md:text-5xl font-bold mb-10">Gallery</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <img src="/assets/premium1.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in" />
-      <img src="/assets/premium2.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-1" />
-      <img src="/assets/premium3.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-2" />
-      <img src="/assets/premium4.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-3" />
+      <img src="./assets/premium1.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in" />
+      <img src="./assets/premium2.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-1" />
+      <img src="./assets/premium3.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-2" />
+      <img src="./assets/premium4.jpg" class="rounded cursor-pointer w-full h-48 object-cover transition duration-300 transform hover:scale-105 hover:brightness-110 fade-in delay-3" />
     </div>
   </section>
 
@@ -140,13 +174,13 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer class="bg-[#2B2B2B] text-[#F6F5F2] py-8 px-6 md:px-32">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
+      <div>
         <p>&copy; 2025 Tulip Restaurant. All rights reserved.</p>
       </div>
-      <div class="flex space-x-4">
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
         <a href="#" class="hover:text-[#EAC47E]">Instagram</a>
         <a href="#" class="hover:text-[#EAC47E]">Facebook</a>
         <a href="#" class="hover:text-[#EAC47E]">Twitter</a>
